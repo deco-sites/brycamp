@@ -66,8 +66,7 @@ const manifest = {
   "sections": {
     "deco-sites/brycamp/sections/Animation/Animation.tsx": $$$$$$0,
     "deco-sites/brycamp/sections/Cards/IconCardsCarousel.tsx": $$$$$$1,
-    "deco-sites/brycamp/sections/Cards/IconCardsCarouselWithImage.tsx":
-      $$$$$$2,
+    "deco-sites/brycamp/sections/Cards/IconCardsCarouselWithImage.tsx": $$$$$$2,
     "deco-sites/brycamp/sections/Cards/ImageCardsCarousel.tsx": $$$$$$3,
     "deco-sites/brycamp/sections/Cards/ImageCardsCarouselWithImage.tsx":
       $$$$$$4,
@@ -101,8 +100,7 @@ const manifest = {
     "deco-sites/brycamp/sections/Miscellaneous/CookieConsent.tsx": $$$$$$32,
     "deco-sites/brycamp/sections/Miscellaneous/Slide.tsx": $$$$$$33,
     "deco-sites/brycamp/sections/Newsletter/Newsletter.tsx": $$$$$$34,
-    "deco-sites/brycamp/sections/Product/ImageGalleryFrontBack.tsx":
-      $$$$$$35,
+    "deco-sites/brycamp/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$35,
     "deco-sites/brycamp/sections/Product/NotFound.tsx": $$$$$$36,
     "deco-sites/brycamp/sections/Product/NotFoundChallenge.tsx": $$$$$$37,
     "deco-sites/brycamp/sections/Product/ProductDetails.tsx": $$$$$$38,
