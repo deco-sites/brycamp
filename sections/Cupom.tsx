@@ -46,7 +46,7 @@ function Cupom({ cupons, title }: Props) {
   return (
     <div className="container px-2">
       {title && <h2 className="font-bold text-5xl mb-4">{title}</h2>}
-      <ul className="container flex items-center gap-3">
+      <ul className="flex items-center gap-3">
         {cupons.map(({ code, description }) => (
           <CupomItem
             key={code}
