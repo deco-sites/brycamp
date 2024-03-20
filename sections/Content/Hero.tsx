@@ -1,5 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import { Temperature } from "apps/weather/loaders/temperature.ts";
 
 export interface CTA {
   id?: string;
@@ -17,6 +18,7 @@ export interface Props {
   image?: ImageWidget;
   placement: "left" | "right";
   cta?: CTA[];
+  temperature?: Temperature | null;
 }
 
 const PLACEMENT = {
@@ -30,6 +32,7 @@ export default function HeroFlats({
   image,
   placement,
   cta,
+  temperature,
 }: Props) {
   return (
     <div>
@@ -69,6 +72,11 @@ export default function HeroFlats({
             <p class="text-zinc-400 text-[16px] md:text-[18px] leading-[150%]">
               {description}
             </p>
+            {temperature && temperature?.celsius && (
+              <p class="text-zinc-400 text-[12px] leading-[150%]">
+                Está fazendo {temperature.celsius} graus celsius
+              </p>
+            )}
             <div class="flex flex-col items-center lg:items-start lg:flex-row gap-4">
               {cta?.map((item) => (
                 <a

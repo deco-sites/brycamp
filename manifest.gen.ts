@@ -56,6 +56,7 @@ import * as $$$$$$44 from "./sections/Product/Wishlist.tsx";
 import * as $$$$$$45 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$46 from "./sections/Social/WhatsApp.tsx";
 import * as $$$$$$47 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$48 from "./sections/Weather.tsx";
 
 const manifest = {
   "loaders": {
@@ -114,6 +115,7 @@ const manifest = {
     "deco-sites/brycamp/sections/Social/InstagramPosts.tsx": $$$$$$45,
     "deco-sites/brycamp/sections/Social/WhatsApp.tsx": $$$$$$46,
     "deco-sites/brycamp/sections/Theme/Theme.tsx": $$$$$$47,
+    "deco-sites/brycamp/sections/Weather.tsx": $$$$$$48,
   },
   "apps": {
     "deco-sites/brycamp/apps/decohub.ts": $$$$$$$$$$$0,
