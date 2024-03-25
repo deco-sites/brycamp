@@ -1,7 +1,6 @@
 import { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import { usePartialSection } from "deco/hooks/usePartialSection.ts";
-import ShowMore from "../islands/PartialImageGallery/ShowMore.tsx";
 
 export interface Props {
   images: ImageWidget[];
@@ -22,33 +21,31 @@ function PartialImageGallery({ images }: Props) {
           );
         })}
       </div>
-      <ShowMore>
-        <button
-          id="show-more-partial-image-gallery"
-          className="hidden"
-          {...usePartialSection({
-            props: {
-              images: [
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-              ],
-            },
-            mode: "append",
-          })}
-        >
-          Show More
-        </button>
-      </ShowMore>
+      <button
+        id="show-more-partial-image-gallery"
+        className="hidden"
+        {...usePartialSection({
+          props: {
+            images: [
+              "https://placehold.co/600x400?text=Hello+World",
+              "https://placehold.co/600x400?text=Hello+World",
+              "https://placehold.co/600x400?text=Hello+World",
+              "https://placehold.co/600x400?text=Hello+World",
+              "https://placehold.co/600x400?text=Hello+World",
+              "https://placehold.co/600x400?text=Hello+World",
+              "https://placehold.co/600x400?text=Hello+World",
+              "https://placehold.co/600x400?text=Hello+World",
+              "https://placehold.co/600x400?text=Hello+World",
+              "https://placehold.co/600x400?text=Hello+World",
+              "https://placehold.co/600x400?text=Hello+World",
+              "https://placehold.co/600x400?text=Hello+World",
+            ],
+          },
+          mode: "append",
+        })}
+      >
+        Show More
+      </button>
     </div>
   );
 }
