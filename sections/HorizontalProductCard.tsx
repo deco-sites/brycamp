@@ -8,6 +8,16 @@ export interface Props {
   /** @title Integration */
   productPage: ProductDetailsPage | null;
   forceErrorFallback?: boolean;
+  animateImage?: boolean;
+  widthSize?:
+    | "max-w-xl"
+    | "max-w-2xl"
+    | "max-w-3xl"
+    | "max-w-4xl"
+    | "max-w-5xl"
+    | "max-w-6xl"
+    | "max-w-7xl"
+    | "max-w-full";
 }
 
 const specificationsIgnore = ["RefId", "cluster"];
@@ -227,7 +237,12 @@ export const loader = (props: Props, req: Request, ctx: AppContext) => {
 };
 
 function HorizontalProductCard(
-  { productPage, forceErrorFallback = false }: Props,
+  {
+    productPage,
+    forceErrorFallback = false,
+    widthSize = "max-w-full",
+    animateImage = false,
+  }: Props,
 ) {
   if (forceErrorFallback) throw new Error("Force Error Fallback");
 
@@ -249,19 +264,28 @@ function HorizontalProductCard(
 
   return (
     <div className="container px-3">
-      <div className="grid lg:grid-cols-[max-content_auto_210px] lg:gap-0 gap-6 p-6 bg-[#424242] text-white rounded-lg">
-        <div className="lg:block flex justify-center bg-white rounded-lg">
-          <a href={url}>
+      <div
+        className={`grid lg:grid-cols-[max-content_auto_210px] grid-cols-[100px_auto_170px] p-6 bg-[#424242] text-white rounded-lg ${widthSize}`}
+      >
+        <div>
+          <a
+            href={url}
+            className="flex items-center justify-center bg-white rounded-lg lg:w-[210px] lg:h-[210px] overflow-hidden"
+          >
             <Image
-              src={image[0].url ?? "https://placehold.co/210"}
+              src={image[0].url ?? "https://placehold.co/180"}
               alt={image[0].alternateName ?? "Alternate Text"}
-              width={210}
-              height={210}
-              className="rounded-lg"
+              width={180}
+              height={180}
+              className={`rounded-lg ${
+                animateImage
+                  ? "transition ease-in-out duration-100 hover:scale-75"
+                  : ""
+              }`}
             />
           </a>
         </div>
-        <div className="lg:px-3.5 overflow-hidden">
+        <div className="px-3.5 overflow-hidden lg:min-w-72">
           <h3 className="text-xl">{name}</h3>
           {specifications.length && (
             <ul className="flex flex-wrap	my-4">
@@ -273,9 +297,11 @@ function HorizontalProductCard(
               ))}
             </ul>
           )}
-          <p className="text-base lg:truncate">{description}</p>
+          <p className="text-base text-ellipsis overflow-hidden	line-clamp-3">
+            {description}
+          </p>
         </div>
-        <div className="flex flex-col justify-between lg:border-l lg:pl-3.5 lg:gap-0 gap-2">
+        <div className="flex flex-col justify-between border-l pl-3.5">
           <div className="flex items-center gap-2">
             <span className="font-medium text-xl">
               {formatPrice(price)}
