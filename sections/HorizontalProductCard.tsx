@@ -117,6 +117,111 @@ export function ErrorFallback() {
   );
 }
 
+export function LoadingFallback() {
+  return (
+    <HorizontalProductCard
+      productPage={{
+        "@type": "ProductDetailsPage",
+        "breadcrumbList": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "name": "Feminino",
+              "item": "https://deco-sites-storefront.deno.dev/feminino",
+              "position": 1,
+            },
+            {
+              "@type": "ListItem",
+              "name": "Roupas",
+              "item": "https://deco-sites-storefront.deno.dev/feminino/roupas",
+              "position": 2,
+            },
+            {
+              "@type": "ListItem",
+              "name": "Saias",
+              "item":
+                "https://deco-sites-storefront.deno.dev/feminino/roupas/saias",
+              "position": 3,
+            },
+            {
+              "@type": "ListItem",
+              "name": "Saia Jeans Light Passion",
+              "item":
+                "https://deco-sites-storefront.deno.dev/saia-jeans-light-passion/p",
+              "position": 4,
+            },
+          ],
+          "numberOfItems": 4,
+        },
+        product: {
+          "@type": "Product",
+          productID: "333",
+          sku: "333",
+          name: "Loading...",
+          image: [
+            {
+              "@type": "ImageObject",
+              alternateName: "Texto Alternativo Para a Imagem",
+              url: "https://placehold.co/210",
+              name: "Texto Alternativo Para a Imagem",
+              encodingFormat: "image",
+            },
+          ],
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin varius est non mi consequat, ac gravida elit tempor. Proin faucibus, leo id consectetur dapibus, diam odio sollicitudin ex, quis rhoncus orci ex ut ante. Nullam gravida justo in sagittis malesuada. Suspendisse lacinia viverra justo, eu ultricies odio tempus eu.",
+          url: "#",
+          offers: {
+            "@type": "AggregateOffer",
+            priceCurrency: "BRL",
+            highPrice: 90,
+            lowPrice: 90,
+            offerCount: 1,
+            offers: [
+              {
+                "@type": "Offer",
+                availability: "https://schema.org/InStock",
+                price: 90,
+                inventoryLevel: {
+                  value: 1000,
+                },
+                priceSpecification: [
+                  {
+                    "@type": "UnitPriceSpecification",
+                    priceType: "https://schema.org/ListPrice",
+                    price: 120,
+                  },
+                ],
+              },
+            ],
+          },
+          additionalProperty: [
+            {
+              "@type": "PropertyValue",
+              "name": "category",
+              "value": "Categoria",
+              "valueReference": "SPECIFICATION",
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "category",
+              "value": "Categoria",
+              "valueReference": "SPECIFICATION",
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "category",
+              "value": "Categoria",
+              "valueReference": "SPECIFICATION",
+            },
+          ],
+        },
+      }}
+      forceErrorFallback={false}
+    />
+  );
+}
+
 export const loader = (props: Props, req: Request, ctx: AppContext) => {
   return props;
 };
