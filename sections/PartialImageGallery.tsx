@@ -4,13 +4,27 @@ import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import ShowMorePartialImageGallery from "../islands/ShowMorePartialImageGallery.tsx";
 
 export interface Props {
+  /**
+   * @minItems 3
+   */
   images: ImageWidget[];
 }
 
 function PartialImageGallery({ images }: Props) {
+  images = [
+    "https://placehold.co/100",
+    "https://placehold.co/100",
+    "https://placehold.co/100",
+    ...images,
+  ];
+
   return (
-    <div>
-      <div className="grid grid-cols-3">
+    <div className="container px-2">
+      <ShowMorePartialImageGallery
+        images={images}
+      />
+      {
+        /* <div className="grid grid-cols-3 md:grid-cols-1 gap-3">
         {images.length > 0 && images.map((value, i) => {
           return (
             <Image
@@ -22,33 +36,25 @@ function PartialImageGallery({ images }: Props) {
           );
         })}
       </div>
-      <ShowMorePartialImageGallery>
-        <button
-          id="show-more-partial-image-gallery"
-          className="hidden"
-          {...usePartialSection({
-            props: {
-              images: [
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-                "https://placehold.co/600x400?text=Hello+World",
-              ],
-            },
-            mode: "append",
-          })}
-        >
-          Show More
-        </button>
-      </ShowMorePartialImageGallery>
+      {images.length > maxForPage && (
+        <ShowMorePartialImageGallery>
+          <button
+            id="show-more-partial-image-gallery"
+            className="hidden"
+            {...usePartialSection({
+              props: {
+                images: [
+                  ...images
+                ],
+              },
+              mode: "append",
+            })}
+          >
+            Show More
+          </button>
+        </ShowMorePartialImageGallery>
+      )} */
+      }
     </div>
   );
 }
