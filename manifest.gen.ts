@@ -5,7 +5,9 @@
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
 import * as $$$2 from "./loaders/availableIcons.ts";
-import * as $$$3 from "./loaders/icons.ts";
+import * as $$$3 from "./loaders/cep.ts";
+import * as $$$4 from "./loaders/votes.ts";
+import * as $$$5 from "./loaders/icons.ts";
 import * as $$$0 from "./loaders/Layouts/ProductCard.tsx";
 import * as $$$1 from "./loaders/List/Sections.tsx";
 import * as $$$$$$0 from "./sections/Animation/Animation.tsx";
@@ -57,13 +59,16 @@ import * as $$$$$$45 from "./sections/Product/ShelfWithImage.tsx";
 import * as $$$$$$46 from "./sections/Product/Wishlist.tsx";
 import * as $$$$$$47 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$48 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$49 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$50 from "./sections/Weather.tsx";
+import * as $$$$$$49 from "./sections/Teste.tsx";
+import * as $$$$$$50 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$51 from "./sections/Weather.tsx";
 
 const manifest = {
   "loaders": {
     "deco-sites/brycamp/loaders/availableIcons.ts": $$$2,
-    "deco-sites/brycamp/loaders/icons.ts": $$$3,
+    "deco-sites/brycamp/loaders/cep.ts": $$$3,
+    "deco-sites/brycamp/loaders/events.ts": $$$4,
+    "deco-sites/brycamp/loaders/icons.ts": $$$5,
     "deco-sites/brycamp/loaders/Layouts/ProductCard.tsx": $$$0,
     "deco-sites/brycamp/loaders/List/Sections.tsx": $$$1,
   },
@@ -118,8 +123,9 @@ const manifest = {
     "deco-sites/brycamp/sections/Product/Wishlist.tsx": $$$$$$46,
     "deco-sites/brycamp/sections/Social/InstagramPosts.tsx": $$$$$$47,
     "deco-sites/brycamp/sections/Social/WhatsApp.tsx": $$$$$$48,
-    "deco-sites/brycamp/sections/Theme/Theme.tsx": $$$$$$49,
-    "deco-sites/brycamp/sections/Weather.tsx": $$$$$$50,
+    "deco-sites/brycamp/sections/Teste.tsx": $$$$$$49,
+    "deco-sites/brycamp/sections/Theme/Theme.tsx": $$$$$$50,
+    "deco-sites/brycamp/sections/Weather.tsx": $$$$$$51,
   },
   "apps": {
     "deco-sites/brycamp/apps/decohub.ts": $$$$$$$$$$$0,
