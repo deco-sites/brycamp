@@ -62,9 +62,8 @@ import * as $$$$$$46 from "./sections/Product/ShelfWithImage.tsx";
 import * as $$$$$$47 from "./sections/Product/Wishlist.tsx";
 import * as $$$$$$48 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$49 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$50 from "./sections/Teste.tsx";
-import * as $$$$$$51 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$52 from "./sections/Weather.tsx";
+import * as $$$$$$50 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$51 from "./sections/Weather.tsx";
 
 const manifest = {
   "loaders": {
@@ -128,9 +127,8 @@ const manifest = {
     "deco-sites/brycamp/sections/Product/Wishlist.tsx": $$$$$$47,
     "deco-sites/brycamp/sections/Social/InstagramPosts.tsx": $$$$$$48,
     "deco-sites/brycamp/sections/Social/WhatsApp.tsx": $$$$$$49,
-    "deco-sites/brycamp/sections/Teste.tsx": $$$$$$50,
-    "deco-sites/brycamp/sections/Theme/Theme.tsx": $$$$$$51,
-    "deco-sites/brycamp/sections/Weather.tsx": $$$$$$52,
+    "deco-sites/brycamp/sections/Theme/Theme.tsx": $$$$$$50,
+    "deco-sites/brycamp/sections/Weather.tsx": $$$$$$51,
   },
   "actions": {
     "deco-sites/brycamp/actions/postVote.ts": $$$$$$$$$0,
