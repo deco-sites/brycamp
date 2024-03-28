@@ -10,8 +10,9 @@ import * as $$$3 from "./loaders/cep.ts";
 import * as $$$4 from "./loaders/icons.ts";
 import * as $$$0 from "./loaders/Layouts/ProductCard.tsx";
 import * as $$$1 from "./loaders/List/Sections.tsx";
-import * as $$$5 from "./loaders/userGithub.ts";
-import * as $$$6 from "./loaders/votes.ts";
+import * as $$$5 from "./loaders/productVotes.ts";
+import * as $$$6 from "./loaders/userGithub.ts";
+import * as $$$7 from "./loaders/votes.ts";
 import * as $$$$$$0 from "./sections/Animation/Animation.tsx";
 import * as $$$$$$2 from "./sections/Cards/IconCardsCarousel.tsx";
 import * as $$$$$$3 from "./sections/Cards/IconCardsCarouselWithImage.tsx";
@@ -72,8 +73,9 @@ const manifest = {
     "deco-sites/brycamp/loaders/icons.ts": $$$4,
     "deco-sites/brycamp/loaders/Layouts/ProductCard.tsx": $$$0,
     "deco-sites/brycamp/loaders/List/Sections.tsx": $$$1,
-    "deco-sites/brycamp/loaders/userGithub.ts": $$$5,
-    "deco-sites/brycamp/loaders/votes.ts": $$$6,
+    "deco-sites/brycamp/loaders/productVotes.ts": $$$5,
+    "deco-sites/brycamp/loaders/userGithub.ts": $$$6,
+    "deco-sites/brycamp/loaders/votes.ts": $$$7,
   },
   "sections": {
     "deco-sites/brycamp/sections/Animation/Animation.tsx": $$$$$$0,
