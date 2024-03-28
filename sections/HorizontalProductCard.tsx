@@ -3,7 +3,7 @@ import Image from "apps/website/components/Image.tsx";
 import { useOffer } from "../sdk/useOffer.ts";
 import { formatPrice } from "../sdk/format.ts";
 import { AppContext } from "deco-sites/brycamp/apps/site.ts";
-import Favorites from "../islands/HorizontalProductCard/Favorites.tsx";
+import Votes from "../islands/HorizontalProductCard/Votes.tsx";
 
 export interface Props {
   /** @title Integration */
@@ -301,7 +301,7 @@ function HorizontalProductCard(
           <p className="text-base text-ellipsis overflow-hidden	line-clamp-3">
             {description}
           </p>
-          <Favorites />
+          <Votes />
         </div>
         <div className="flex flex-col justify-between border-l pl-3.5">
           <div className="flex items-center gap-2">
