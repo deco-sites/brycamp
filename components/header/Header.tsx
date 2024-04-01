@@ -8,6 +8,7 @@ import type { SectionProps } from "deco/types.ts";
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
+import { Votes } from "deco-sites/brycamp/loaders/votes.ts";
 
 export interface Logo {
   src: ImageWidget;
@@ -20,9 +21,11 @@ export interface Buttons {
   hideAccountButton?: boolean;
   hideWishlistButton?: boolean;
   hideCartButton?: boolean;
+  hideTotalVotesButton?: boolean;
 }
 
 export interface Props {
+  votes?: Votes;
   alerts?: string[];
 
   /** @title Search Bar */
@@ -43,6 +46,9 @@ export interface Props {
 }
 
 function Header({
+  votes = {
+    total: 0,
+  },
   alerts,
   searchbar,
   navItems = [
@@ -80,6 +86,7 @@ function Header({
 }: SectionProps<typeof loader>) {
   const platform = usePlatform();
   const items = navItems ?? [];
+  const totalVotes = votes.total;
 
   return (
     <>
@@ -98,6 +105,7 @@ function Header({
               logo={logo}
               logoPosition={logoPosition}
               buttons={buttons}
+              totalVotes={totalVotes}
             />
           </div>
         </Drawers>

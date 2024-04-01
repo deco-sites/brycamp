@@ -2,18 +2,30 @@ import Icon from "../../components/ui/Icon.tsx";
 import { useState } from "preact/hooks";
 import { invoke } from "deco-sites/brycamp/runtime.ts";
 
-function Favorites() {
+function Votes() {
+  const [votes, setVotes] = useState<string>("0");
   const [isVote, setIsVote] = useState<boolean>(false);
-  const [votes, setVotes] = useState<number>(0);
+  const [isUpdate, setIsUpdate] = useState<boolean>(true);
+
+  if (isUpdate) {
+    invoke["deco-sites/brycamp"].loaders.productVotes({
+      productId: "361",
+    }).then(({ product }) => {
+      setVotes(() => product);
+      setIsVote(() => true);
+      setIsUpdate(() => false);
+    });
+  }
 
   return (
     <button
+      disabled={isVote}
       onClick={async () => {
-        setIsVote((is) => !is);
-        setVotes((n) => !isVote ? n + 1 : n - 1);
         await invoke["deco-sites/brycamp"].actions.postVote({
           productId: "361",
         });
+
+        setIsUpdate(() => true);
       }}
     >
       {isVote
@@ -24,4 +36,4 @@ function Favorites() {
   );
 }
 
-export default Favorites;
+export default Votes;

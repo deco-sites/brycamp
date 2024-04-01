@@ -17,13 +17,22 @@ import { Buttons, Logo } from "../../components/header/Header.tsx";
 
 // Make it sure to render it on the server only. DO NOT render it on an island
 function Navbar(
-  { items, searchbar, logo, buttons, logoPosition = "left", device }: {
+  {
+    items,
+    searchbar,
+    logo,
+    buttons,
+    logoPosition = "left",
+    device,
+    totalVotes,
+  }: {
     items: SiteNavigationElement[];
     searchbar?: SearchbarProps;
     logo?: Logo;
     buttons?: Buttons;
     logoPosition?: "left" | "center";
     device: "mobile" | "desktop" | "tablet";
+    totalVotes: number;
   },
 ) {
   const platform = usePlatform();
@@ -129,6 +138,17 @@ function Navbar(
             </button>
             WISHLIST
           </a>
+        )}
+        {!buttons?.hideTotalVotesButton && (
+          <div
+            class="flex items-center text-xs font-thin"
+            aria-label="Total de Votos"
+          >
+            <div class="flex btn btn-circle btn-sm btn-ghost gap-1">
+              <Icon id="Friends" size={20} strokeWidth={0.4} />
+            </div>
+            {totalVotes}
+          </div>
         )}
         {!buttons?.hideCartButton && (
           <div class="flex items-center text-xs font-thin">
