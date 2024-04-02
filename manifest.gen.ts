@@ -13,6 +13,7 @@ import * as $$$1 from "./loaders/List/Sections.tsx";
 import * as $$$5 from "./loaders/productVotes.ts";
 import * as $$$6 from "./loaders/userGithub.ts";
 import * as $$$7 from "./loaders/votes.ts";
+import * as $$$$$$$0 from "./matchers/utm.ts";
 import * as $$$$$$0 from "./sections/Animation/Animation.tsx";
 import * as $$$$$$2 from "./sections/Cards/IconCardsCarousel.tsx";
 import * as $$$$$$3 from "./sections/Cards/IconCardsCarouselWithImage.tsx";
@@ -131,6 +132,9 @@ const manifest = {
     "deco-sites/brycamp/sections/Social/WhatsApp.tsx": $$$$$$49,
     "deco-sites/brycamp/sections/Theme/Theme.tsx": $$$$$$50,
     "deco-sites/brycamp/sections/Weather.tsx": $$$$$$51,
+  },
+  "matchers": {
+    "deco-sites/brycamp/matchers/utm.ts": $$$$$$$0,
   },
   "actions": {
     "deco-sites/brycamp/actions/postVote.ts": $$$$$$$$$0,
