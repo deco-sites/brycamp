@@ -5,6 +5,7 @@
 import * as $$$$$$$$$0 from "./actions/postVote.ts";
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
+import * as $$$$$$$$0 from "./flags/multivariate/ProductsCard.ts";
 import * as $$$2 from "./loaders/availableIcons.ts";
 import * as $$$3 from "./loaders/cep.ts";
 import * as $$$4 from "./loaders/icons.ts";
@@ -135,6 +136,9 @@ const manifest = {
   },
   "matchers": {
     "deco-sites/brycamp/matchers/utm.ts": $$$$$$$0,
+  },
+  "flags": {
+    "deco-sites/brycamp/flags/multivariate/ProductsCard.ts": $$$$$$$$0,
   },
   "actions": {
     "deco-sites/brycamp/actions/postVote.ts": $$$$$$$$$0,
