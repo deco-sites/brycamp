@@ -2,30 +2,40 @@ import Icon from "../../components/ui/Icon.tsx";
 import { useState } from "preact/hooks";
 import { invoke } from "deco-sites/brycamp/runtime.ts";
 
-function Votes() {
+interface Props {
+  productId: string;
+}
+
+function Votes({ productId }: Props) {
   const [votes, setVotes] = useState<string>("0");
   const [isVote, setIsVote] = useState<boolean>(false);
   const [isUpdate, setIsUpdate] = useState<boolean>(true);
 
-  if (isUpdate) {
-    invoke["deco-sites/brycamp"].loaders.productVotes({
-      productId: "361",
-    }).then(({ product }) => {
-      setVotes(() => product);
-      setIsVote(() => true);
-      setIsUpdate(() => false);
-    });
+  function handleUpdate() {
+    if (isUpdate) {
+      invoke["deco-sites/brycamp"].loaders.productVotes({
+        productId,
+      }).then(({ product }) => {
+        setVotes(() => product);
+        if (Number(product) > 0) {
+          setIsVote(() => true);
+          setIsUpdate(() => false);
+        }
+      });
+    }
   }
+
+  handleUpdate();
 
   return (
     <button
       disabled={isVote}
       onClick={async () => {
         await invoke["deco-sites/brycamp"].actions.postVote({
-          productId: "361",
+          productId,
         });
 
-        setIsUpdate(() => true);
+        handleUpdate();
       }}
     >
       {isVote
