@@ -4,6 +4,7 @@ import { useOffer } from "../sdk/useOffer.ts";
 import { formatPrice } from "../sdk/format.ts";
 import { AppContext } from "deco-sites/brycamp/apps/site.ts";
 import Votes from "../islands/HorizontalProductCard/Votes.tsx";
+import { type Products } from "../flags/multivariate/ProductsCard.ts";
 
 type WidthSize =
   | "max-w-xl"
@@ -17,7 +18,7 @@ type WidthSize =
 
 export interface Props {
   /** @title Integration */
-  products: Product[] | null;
+  products: Products;
   forceErrorFallback?: boolean;
   animateImage?: boolean;
   widthSize?: WidthSize;
