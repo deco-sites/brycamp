@@ -2,6 +2,7 @@ import { asset, Head } from "$fresh/runtime.ts";
 import { defineApp } from "$fresh/server.ts";
 import { Context } from "deco/deco.ts";
 import Theme from "../sections/Theme/Theme.tsx";
+import ToastContainer from "../islands/ToastContainer.tsx";
 
 const sw = () =>
   addEventListener("load", () =>
@@ -30,6 +31,9 @@ export default defineApp(async (_req, ctx) => {
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
       </Head>
+
+      {/* Include Toast Container for react-toastify */}
+      <ToastContainer />
 
       {/* Rest of Preact tree */}
       <ctx.Component />

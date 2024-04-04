@@ -1,6 +1,7 @@
 import Icon from "../../components/ui/Icon.tsx";
 import { useState } from "preact/hooks";
 import { invoke } from "deco-sites/brycamp/runtime.ts";
+import { toast } from "toastify";
 
 interface Props {
   productId: string;
@@ -36,6 +37,8 @@ function Votes({ productId }: Props) {
         });
 
         handleUpdate();
+
+        toast<string>("😊 Obrigado por votar!");
       }}
     >
       {isVote
