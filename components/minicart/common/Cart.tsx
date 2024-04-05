@@ -43,8 +43,8 @@ function Cart({
 
   return (
     <div
-      class="flex flex-col justify-center items-center overflow-hidden"
-      style={{ minWidth: "calc(min(100vw, 425px))", maxWidth: "425px" }}
+      class="flex flex-col justify-center items-center overflow-hidden py-5 px-2"
+      style={{ minWidth: "calc(min(100vw, 425px))" }}
     >
       {isEmtpy
         ? (

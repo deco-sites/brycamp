@@ -3,6 +3,7 @@ import { useState } from "preact/hooks";
 import Button from "../../../components/ui/Button.tsx";
 import { sendEvent } from "../../../sdk/analytics.tsx";
 import { useUI } from "../../../sdk/useUI.ts";
+import { toast } from "toastify";
 
 export interface Props {
   /** @description: sku name */
@@ -28,7 +29,16 @@ const useAddToCart = ({ eventParams, onAddItem }: Props) => {
         params: eventParams,
       });
 
-      displayCart.value = true;
+      toast.success<string>("Adicionado com sucesso ao carrinho!", {
+        autoClose: 2000,
+        pauseOnHover: false,
+        closeOnClick: false,
+        draggable: false,
+      });
+
+      setTimeout(() => {
+        displayCart.value = true;
+      }, 3000);
     } finally {
       setLoading(false);
     }
