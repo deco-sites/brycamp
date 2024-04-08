@@ -22,13 +22,17 @@ export default function Island(
       {children}
       <button
         className="btn absolute"
-        onClick={() => {
+        onClick={(e) => {
           const el = document.getElementById(
             `show-more-partial-image-gallery-${index}`,
           );
 
           if (el) {
             el.click();
+          }
+
+          if (images.length > end) {
+            e.currentTarget.classList.add("hidden");
           }
         }}
       >
