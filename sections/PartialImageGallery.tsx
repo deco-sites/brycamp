@@ -1,14 +1,20 @@
 import { ImageWidget } from "apps/admin/widgets.ts";
 import ShowMorePartialImageGallery from "../islands/ShowMorePartialImageGallery.tsx";
+import { usePartialSection } from "deco/hooks/usePartialSection.ts";
+import Image from "apps/website/components/Image.tsx";
 
 export interface Props {
+  /** @hide */
+  initial: number;
+  /** @hide */
+  end: number;
   /**
    * @minItems 3
    */
   images: ImageWidget[];
 }
 
-function PartialImageGallery({ images }: Props) {
+function PartialImageGallery({ initial = 0, end = 3, images }: Props) {
   if (!images || !images.length) images = [];
 
   if (images.length < 3) {
@@ -20,41 +26,38 @@ function PartialImageGallery({ images }: Props) {
 
   return (
     <div className="container px-2">
-      <ShowMorePartialImageGallery
-        images={images}
-      />
       {
-        /* <div className="grid grid-cols-3 md:grid-cols-1 gap-3">
-        {images.length > 0 && images.map((value, i) => {
+        /* <ShowMorePartialImageGallery
+        images={images}
+      /> */
+      }
+      <div className="grid grid-cols-3 md:grid-cols-1 gap-3">
+        {images.length > 0 && images.slice(initial, end).map((value, i) => {
           return (
             <Image
               src={value}
               alt={value}
-              width={100}
-              height={100}
+              width={500}
+              height={300}
             />
           );
         })}
       </div>
-      {images.length > maxForPage && (
-        <ShowMorePartialImageGallery>
-          <button
-            id="show-more-partial-image-gallery"
-            className="hidden"
-            {...usePartialSection({
-              props: {
-                images: [
-                  ...images
-                ],
-              },
-              mode: "append",
-            })}
-          >
-            Show More
-          </button>
-        </ShowMorePartialImageGallery>
-      )} */
-      }
+      {images.length > 3 && (
+        <button
+          id="show-more-partial-image-gallery"
+          {...usePartialSection({
+            props: {
+              images,
+              initial: initial + 3,
+              end: end + 3,
+            },
+            mode: "append",
+          })}
+        >
+          Show More
+        </button>
+      )}
     </div>
   );
 }
