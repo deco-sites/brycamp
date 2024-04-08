@@ -18,7 +18,10 @@ export default function Island({ children, images }: Props) {
       <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
         {images.length > 0 && images.slice(0, showCount).map((value, i) => {
           return (
-            <li key={i} className="group overflow-hidden">
+            <li
+              key={i}
+              className="group overflow-hidden flex items-center justify-center max-h-[300px]"
+            >
               <Image
                 src={value}
                 alt={value}
