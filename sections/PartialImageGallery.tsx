@@ -4,12 +4,18 @@ import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import Image from "apps/website/components/Image.tsx";
 
 export interface Props {
-  /** @hide */
-  initial: number;
-  /** @hide */
-  end: number;
-  /** @hide */
-  index: number;
+  /**
+   * @hide
+   */
+  initial?: number;
+  /**
+   * @hide
+   */
+  end?: number;
+  /**
+   * @hide
+   */
+  index?: number;
   /**
    * @minItems 3
    */
@@ -27,11 +33,6 @@ function PartialImageGallery(
       images.push("https://placehold.co/500x300");
     }
   }
-
-  console.log({
-    len: images.length,
-    end,
-  });
 
   return (
     <div className="container px-2">
