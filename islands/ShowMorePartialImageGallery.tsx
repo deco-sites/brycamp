@@ -15,18 +15,20 @@ export default function Island({ children, images }: Props) {
   return (
     <>
       {children}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
         {images.length > 0 && images.slice(0, showCount).map((value, i) => {
           return (
-            <Image
-              src={value}
-              alt={value}
-              width={100}
-              height={100}
-            />
+            <li key={i} className="group overflow-hidden">
+              <Image
+                src={value}
+                alt={value}
+                width={500}
+                className="min-w-full group-hover:scale-110 transition-all"
+              />
+            </li>
           );
         })}
-      </div>
+      </ul>
       {
         /* <button
         id="show-more-partial-image-gallery"
@@ -44,14 +46,16 @@ export default function Island({ children, images }: Props) {
       </button> */
       }
       {images.length > showCount && (
-        <button
-          onClick={() => {
-            console.log("lorem");
-            setShowCount((v) => v + 3);
-          }}
-        >
-          Show More
-        </button>
+        <div class="flex justify-center mt-3">
+          <button
+            className="btn"
+            onClick={() => {
+              setShowCount((v) => v + 3);
+            }}
+          >
+            Show More
+          </button>
+        </div>
       )}
     </>
   );

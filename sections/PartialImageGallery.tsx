@@ -1,6 +1,4 @@
 import { ImageWidget } from "apps/admin/widgets.ts";
-import Image from "apps/website/components/Image.tsx";
-import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import ShowMorePartialImageGallery from "../islands/ShowMorePartialImageGallery.tsx";
 
 export interface Props {
@@ -11,12 +9,14 @@ export interface Props {
 }
 
 function PartialImageGallery({ images }: Props) {
-  images = [
-    "https://placehold.co/100",
-    "https://placehold.co/100",
-    "https://placehold.co/100",
-    ...images,
-  ];
+  if (!images || !images.length) images = [];
+
+  if (images.length < 3) {
+    const calc = 3 - images.length;
+    for (let i = 0; i < calc; i++) {
+      images.push("https://placehold.co/500x300");
+    }
+  }
 
   return (
     <div className="container px-2">
