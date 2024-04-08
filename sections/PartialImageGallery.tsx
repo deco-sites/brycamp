@@ -8,13 +8,17 @@ export interface Props {
   initial: number;
   /** @hide */
   end: number;
+  /** @hide */
+  index: number;
   /**
    * @minItems 3
    */
   images: ImageWidget[];
 }
 
-function PartialImageGallery({ initial = 0, end = 3, images }: Props) {
+function PartialImageGallery(
+  { initial = 0, end = 3, index = 0, images }: Props,
+) {
   if (!images || !images.length) images = [];
 
   if (images.length < 3) {
@@ -23,6 +27,11 @@ function PartialImageGallery({ initial = 0, end = 3, images }: Props) {
       images.push("https://placehold.co/500x300");
     }
   }
+
+  console.log({
+    len: images.length,
+    end,
+  });
 
   return (
     <div className="container px-2">
@@ -43,20 +52,29 @@ function PartialImageGallery({ initial = 0, end = 3, images }: Props) {
           );
         })}
       </div>
-      {images.length > 3 && (
-        <button
-          id="show-more-partial-image-gallery"
-          {...usePartialSection({
-            props: {
-              images,
-              initial: initial + 3,
-              end: end + 3,
-            },
-            mode: "append",
-          })}
+      {images.length > end && (
+        <ShowMorePartialImageGallery
+          images={images}
+          index={index}
+          initial={initial}
+          end={end}
         >
-          Show More
-        </button>
+          <button
+            id={`show-more-partial-image-gallery-${index}`}
+            className="hidden"
+            {...usePartialSection({
+              props: {
+                images,
+                initial: initial + 3,
+                end: end + 3,
+                index: index + 1,
+              },
+              mode: "append",
+            })}
+          >
+            Show More
+          </button>
+        </ShowMorePartialImageGallery>
       )}
     </div>
   );

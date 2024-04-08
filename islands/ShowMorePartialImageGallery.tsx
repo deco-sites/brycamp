@@ -6,16 +6,36 @@ import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 
 export interface Props {
   children?: ComponentChildren;
+  initial: number;
+  end: number;
+  index: number;
   images: ImageWidget[];
 }
 
-export default function Island({ children, images }: Props) {
+export default function Island(
+  { children, images, initial, end, index }: Props,
+) {
   const [showCount, setShowCount] = useState(3);
 
   return (
     <>
       {children}
-      <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
+      <button
+        className="btn absolute"
+        onClick={() => {
+          const el = document.getElementById(
+            `show-more-partial-image-gallery-${index}`,
+          );
+
+          if (el) {
+            el.click();
+          }
+        }}
+      >
+        Show More
+      </button>
+      {
+        /* <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
         {images.length > 0 && images.slice(0, showCount).map((value, i) => {
           return (
             <li
@@ -31,24 +51,10 @@ export default function Island({ children, images }: Props) {
             </li>
           );
         })}
-      </ul>
-      {
-        /* <button
-        id="show-more-partial-image-gallery"
-        className="hidden"
-        {...usePartialSection({
-          props: {
-            images: [
-              ...images
-            ],
-          },
-          mode: "append",
-        })}
-      >
-        Show More
-      </button> */
+      </ul> */
       }
-      {images.length > showCount && (
+      {
+        /* {images.length > showCount && (
         <div class="flex justify-center mt-3">
           <button
             className="btn"
@@ -59,7 +65,8 @@ export default function Island({ children, images }: Props) {
             Show More
           </button>
         </div>
-      )}
+      )} */
+      }
     </>
   );
 }
