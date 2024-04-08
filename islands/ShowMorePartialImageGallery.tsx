@@ -20,24 +20,26 @@ export default function Island(
   return (
     <>
       {children}
-      <button
-        className="btn absolute"
-        onClick={(e) => {
-          const el = document.getElementById(
-            `show-more-partial-image-gallery-${index}`,
-          );
+      <div className="flex justify-center mt-3">
+        <button
+          className="btn"
+          onClick={(e) => {
+            const el = document.getElementById(
+              `show-more-partial-image-gallery-${index}`,
+            );
 
-          if (el) {
-            el.click();
-          }
+            if (el) {
+              el.click();
+            }
 
-          if (images.length > end) {
-            e.currentTarget.classList.add("hidden");
-          }
-        }}
-      >
-        Show More
-      </button>
+            if (images.length > end) {
+              e.currentTarget.classList.add("hidden");
+            }
+          }}
+        >
+          Show More
+        </button>
+      </div>
       {
         /* <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
         {images.length > 0 && images.slice(0, showCount).map((value, i) => {
