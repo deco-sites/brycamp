@@ -41,18 +41,24 @@ function PartialImageGallery(
         images={images}
       /> */
       }
-      <div className="grid grid-cols-3 md:grid-cols-1 gap-3">
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
         {images.length > 0 && images.slice(initial, end).map((value, i) => {
           return (
-            <Image
-              src={value}
-              alt={value}
-              width={500}
-              height={300}
-            />
+            <li
+              key={i}
+              className="group overflow-hidden flex items-center justify-center max-h-[300px]"
+            >
+              <Image
+                src={value}
+                alt={value}
+                width={500}
+                height={300}
+                className="min-w-full group-hover:scale-110 transition-all"
+              />
+            </li>
           );
         })}
-      </div>
+      </ul>
       {images.length > end && (
         <ShowMorePartialImageGallery
           images={images}
