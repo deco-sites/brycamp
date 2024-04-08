@@ -14,6 +14,7 @@ import Image from "apps/website/components/Image.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import { Buttons, Logo } from "../../components/header/Header.tsx";
+import VotesButton from "deco-sites/brycamp/islands/Header/VotesButton.tsx";
 
 // Make it sure to render it on the server only. DO NOT render it on an island
 function Navbar(
@@ -140,15 +141,7 @@ function Navbar(
           </a>
         )}
         {!buttons?.hideTotalVotesButton && (
-          <div
-            class="flex items-center text-xs font-thin"
-            aria-label="Total de Votos"
-          >
-            <div class="flex btn btn-circle btn-sm btn-ghost gap-1">
-              <Icon id="Friends" size={20} strokeWidth={0.4} />
-            </div>
-            <span class="total-votes">{totalVotes}</span>
-          </div>
+          <VotesButton totalVotes={totalVotes} />
         )}
         {!buttons?.hideCartButton && (
           <div class="flex items-center text-xs font-thin">
