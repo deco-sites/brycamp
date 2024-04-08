@@ -1,5 +1,6 @@
 import { useMemo } from "preact/hooks";
 import type { ImageWidget } from "apps/admin/widgets.ts";
+import Image from "apps/website/components/Image.tsx";
 
 export interface Image {
   image: ImageWidget;
@@ -57,10 +58,12 @@ function Partners(props: Props) {
                 style={`animation-delay: ${300 * index}ms`}
               >
                 {colImages.map((item: Image) => (
-                  <img
+                  <Image
                     key={index}
                     src={item.image}
                     alt={item.altText || ""}
+                    width={70}
+                    height={27}
                   />
                 ))}
               </div>

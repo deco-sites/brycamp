@@ -1,4 +1,5 @@
 import { User } from "../loaders/userGithub.ts";
+import Image from "apps/website/components/Image.tsx";
 
 export interface Props {
   user: User;
@@ -23,9 +24,11 @@ function CardUserGithub({ user }: Props) {
           : (
             <div className="card w-96 bg-base-100 shadow-xl">
               <figure>
-                <img
+                <Image
                   src={avatar_url}
                   alt={name}
+                  width={400}
+                  height={400}
                 />
               </figure>
               <div className="card-body">
