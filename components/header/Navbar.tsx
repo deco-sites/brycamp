@@ -147,7 +147,7 @@ function Navbar(
             <div class="flex btn btn-circle btn-sm btn-ghost gap-1">
               <Icon id="Friends" size={20} strokeWidth={0.4} />
             </div>
-            {totalVotes}
+            <span class="total-votes">{totalVotes}</span>
           </div>
         )}
         {!buttons?.hideCartButton && (

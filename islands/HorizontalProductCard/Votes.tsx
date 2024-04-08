@@ -34,6 +34,14 @@ function Votes({ productId }: Props) {
       onClick={async () => {
         await invoke["deco-sites/brycamp"].actions.postVote({
           productId,
+        }).then(({ total }) => {
+          const totalVotesEl = document.querySelectorAll(".total-votes");
+
+          if (totalVotesEl && totalVotesEl.length) {
+            totalVotesEl.forEach((el) => {
+              el.textContent = String(total);
+            });
+          }
         });
 
         handleUpdate();

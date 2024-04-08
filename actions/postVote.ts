@@ -5,6 +5,8 @@ export interface Props {
 }
 
 export interface Result {
+  total: number;
+  product: number;
   status: "ok" | "failure";
 }
 
@@ -20,12 +22,13 @@ const action = async (
       "x-api-key": "brycamp",
     },
   });
+  const data = await res.json();
 
   if (res.ok) {
-    return { status: "ok" };
+    return { status: "ok", ...data };
   }
 
-  return { status: "failure" };
+  return { status: "failure", ...data };
 };
 
 export default action;
