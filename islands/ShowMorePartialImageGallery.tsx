@@ -6,17 +6,15 @@ import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 
 export interface Props {
   children?: ComponentChildren;
-  initial: number;
-  end: number;
-  index: number;
+  end?: number;
+  index?: number;
   images: ImageWidget[];
 }
 
+// Usando usePartialSection
 export default function Island(
-  { children, images, initial, end, index }: Props,
+  { children, images, end, index }: Props,
 ) {
-  const [showCount, setShowCount] = useState(3);
-
   return (
     <>
       {children}
@@ -32,7 +30,7 @@ export default function Island(
               el.click();
             }
 
-            if (images.length > end) {
+            if (end && images.length > end) {
               e.currentTarget.classList.add("hidden");
             }
           }}
@@ -40,8 +38,18 @@ export default function Island(
           Show More
         </button>
       </div>
-      {
-        /* <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
+    </>
+  );
+}
+
+/* // Sem usePartialSection
+export default function Island({ children, images }: Props) {
+  const [showCount, setShowCount] = useState(3);
+
+  return (
+    <>
+      {children}
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
         {images.length > 0 && images.slice(0, showCount).map((value, i) => {
           return (
             <li
@@ -57,10 +65,8 @@ export default function Island(
             </li>
           );
         })}
-      </ul> */
-      }
-      {
-        /* {images.length > showCount && (
+      </ul>
+      {images.length > showCount && (
         <div class="flex justify-center mt-3">
           <button
             className="btn"
@@ -71,8 +77,7 @@ export default function Island(
             Show More
           </button>
         </div>
-      )} */
-      }
+      )}
     </>
   );
-}
+} */

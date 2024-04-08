@@ -22,6 +22,7 @@ export interface Props {
   images: ImageWidget[];
 }
 
+// Usando usePartialSection
 function PartialImageGallery(
   { initial = 0, end = 3, index = 0, images }: Props,
 ) {
@@ -36,11 +37,6 @@ function PartialImageGallery(
 
   return (
     <div className="container px-2">
-      {
-        /* <ShowMorePartialImageGallery
-        images={images}
-      /> */
-      }
       <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
         {images.length > 0 && images.slice(initial, end).map((value, i) => {
           return (
@@ -63,7 +59,6 @@ function PartialImageGallery(
         <ShowMorePartialImageGallery
           images={images}
           index={index}
-          initial={initial}
           end={end}
         >
           <button
@@ -86,5 +81,26 @@ function PartialImageGallery(
     </div>
   );
 }
+
+/* // Sem usePartialSection
+function PartialImageGallery({ images }: Props) {
+  if (!images || !images.length) images = [];
+
+  if (images.length < 3) {
+    const calc = 3 - images.length;
+    for (let i = 0; i < calc; i++) {
+      images.push("https://placehold.co/500x300");
+    }
+  }
+
+  return (
+    <div className="container px-2">
+      <ShowMorePartialImageGallery
+        images={images}
+      />
+    </div>
+  );
+}
+*/
 
 export default PartialImageGallery;
