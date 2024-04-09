@@ -6,9 +6,43 @@ import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 
 export interface Props {
   children?: ComponentChildren;
+  end?: number;
+  index?: number;
   images: ImageWidget[];
 }
 
+// Usando usePartialSection
+export default function Island(
+  { children, images, end, index }: Props,
+) {
+  return (
+    <>
+      {children}
+      <div className="flex justify-center mt-3">
+        <button
+          className="btn"
+          onClick={(e) => {
+            const el = document.getElementById(
+              `show-more-partial-image-gallery-${index}`,
+            );
+
+            if (el) {
+              el.click();
+            }
+
+            if (end && images.length > end) {
+              e.currentTarget.classList.add("hidden");
+            }
+          }}
+        >
+          Show More
+        </button>
+      </div>
+    </>
+  );
+}
+
+/* // Sem usePartialSection
 export default function Island({ children, images }: Props) {
   const [showCount, setShowCount] = useState(3);
 
@@ -32,22 +66,6 @@ export default function Island({ children, images }: Props) {
           );
         })}
       </ul>
-      {
-        /* <button
-        id="show-more-partial-image-gallery"
-        className="hidden"
-        {...usePartialSection({
-          props: {
-            images: [
-              ...images
-            ],
-          },
-          mode: "append",
-        })}
-      >
-        Show More
-      </button> */
-      }
       {images.length > showCount && (
         <div class="flex justify-center mt-3">
           <button
@@ -62,4 +80,4 @@ export default function Island({ children, images }: Props) {
       )}
     </>
   );
-}
+} */
