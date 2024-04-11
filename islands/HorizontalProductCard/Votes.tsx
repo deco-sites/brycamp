@@ -2,6 +2,7 @@ import Icon from "../../components/ui/Icon.tsx";
 import { useState } from "preact/hooks";
 import { invoke } from "deco-sites/brycamp/runtime.ts";
 import { toast } from "toastify";
+import { sendEvent } from "deco-sites/brycamp/sdk/analytics.tsx";
 
 interface Props {
   productId: string;
@@ -42,6 +43,13 @@ function Votes({ productId }: Props) {
               el.textContent = String(total);
             });
           }
+
+          sendEvent({
+            name: "post_score",
+            params: {
+              score: total,
+            },
+          });
         });
 
         handleUpdate();
