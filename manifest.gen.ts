@@ -53,21 +53,22 @@ import * as $$$$$$34 from "./sections/Links/Shortcuts.tsx";
 import * as $$$$$$35 from "./sections/Miscellaneous/CampaignTimer.tsx";
 import * as $$$$$$36 from "./sections/Miscellaneous/CookieConsent.tsx";
 import * as $$$$$$37 from "./sections/Miscellaneous/Slide.tsx";
-import * as $$$$$$38 from "./sections/Newsletter/Newsletter.tsx";
-import * as $$$$$$39 from "./sections/PartialImageGallery.tsx";
-import * as $$$$$$40 from "./sections/Product/ImageGalleryFrontBack.tsx";
-import * as $$$$$$41 from "./sections/Product/NotFound.tsx";
-import * as $$$$$$42 from "./sections/Product/NotFoundChallenge.tsx";
-import * as $$$$$$43 from "./sections/Product/ProductDetails.tsx";
-import * as $$$$$$44 from "./sections/Product/ProductShelf.tsx";
-import * as $$$$$$45 from "./sections/Product/ProductShelfTabbed.tsx";
-import * as $$$$$$46 from "./sections/Product/SearchResult.tsx";
-import * as $$$$$$47 from "./sections/Product/ShelfWithImage.tsx";
-import * as $$$$$$48 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$49 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$50 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$51 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$52 from "./sections/Weather.tsx";
+import * as $$$$$$38 from "./sections/MyAnalytics.tsx";
+import * as $$$$$$39 from "./sections/Newsletter/Newsletter.tsx";
+import * as $$$$$$40 from "./sections/PartialImageGallery.tsx";
+import * as $$$$$$41 from "./sections/Product/ImageGalleryFrontBack.tsx";
+import * as $$$$$$42 from "./sections/Product/NotFound.tsx";
+import * as $$$$$$43 from "./sections/Product/NotFoundChallenge.tsx";
+import * as $$$$$$44 from "./sections/Product/ProductDetails.tsx";
+import * as $$$$$$45 from "./sections/Product/ProductShelf.tsx";
+import * as $$$$$$46 from "./sections/Product/ProductShelfTabbed.tsx";
+import * as $$$$$$47 from "./sections/Product/SearchResult.tsx";
+import * as $$$$$$48 from "./sections/Product/ShelfWithImage.tsx";
+import * as $$$$$$49 from "./sections/Product/Wishlist.tsx";
+import * as $$$$$$50 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$51 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$52 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$53 from "./sections/Weather.tsx";
 
 const manifest = {
   "loaders": {
@@ -120,21 +121,22 @@ const manifest = {
     "deco-sites/brycamp/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$35,
     "deco-sites/brycamp/sections/Miscellaneous/CookieConsent.tsx": $$$$$$36,
     "deco-sites/brycamp/sections/Miscellaneous/Slide.tsx": $$$$$$37,
-    "deco-sites/brycamp/sections/Newsletter/Newsletter.tsx": $$$$$$38,
-    "deco-sites/brycamp/sections/PartialImageGallery.tsx": $$$$$$39,
-    "deco-sites/brycamp/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$40,
-    "deco-sites/brycamp/sections/Product/NotFound.tsx": $$$$$$41,
-    "deco-sites/brycamp/sections/Product/NotFoundChallenge.tsx": $$$$$$42,
-    "deco-sites/brycamp/sections/Product/ProductDetails.tsx": $$$$$$43,
-    "deco-sites/brycamp/sections/Product/ProductShelf.tsx": $$$$$$44,
-    "deco-sites/brycamp/sections/Product/ProductShelfTabbed.tsx": $$$$$$45,
-    "deco-sites/brycamp/sections/Product/SearchResult.tsx": $$$$$$46,
-    "deco-sites/brycamp/sections/Product/ShelfWithImage.tsx": $$$$$$47,
-    "deco-sites/brycamp/sections/Product/Wishlist.tsx": $$$$$$48,
-    "deco-sites/brycamp/sections/Social/InstagramPosts.tsx": $$$$$$49,
-    "deco-sites/brycamp/sections/Social/WhatsApp.tsx": $$$$$$50,
-    "deco-sites/brycamp/sections/Theme/Theme.tsx": $$$$$$51,
-    "deco-sites/brycamp/sections/Weather.tsx": $$$$$$52,
+    "deco-sites/brycamp/sections/MyAnalytics.tsx": $$$$$$38,
+    "deco-sites/brycamp/sections/Newsletter/Newsletter.tsx": $$$$$$39,
+    "deco-sites/brycamp/sections/PartialImageGallery.tsx": $$$$$$40,
+    "deco-sites/brycamp/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$41,
+    "deco-sites/brycamp/sections/Product/NotFound.tsx": $$$$$$42,
+    "deco-sites/brycamp/sections/Product/NotFoundChallenge.tsx": $$$$$$43,
+    "deco-sites/brycamp/sections/Product/ProductDetails.tsx": $$$$$$44,
+    "deco-sites/brycamp/sections/Product/ProductShelf.tsx": $$$$$$45,
+    "deco-sites/brycamp/sections/Product/ProductShelfTabbed.tsx": $$$$$$46,
+    "deco-sites/brycamp/sections/Product/SearchResult.tsx": $$$$$$47,
+    "deco-sites/brycamp/sections/Product/ShelfWithImage.tsx": $$$$$$48,
+    "deco-sites/brycamp/sections/Product/Wishlist.tsx": $$$$$$49,
+    "deco-sites/brycamp/sections/Social/InstagramPosts.tsx": $$$$$$50,
+    "deco-sites/brycamp/sections/Social/WhatsApp.tsx": $$$$$$51,
+    "deco-sites/brycamp/sections/Theme/Theme.tsx": $$$$$$52,
+    "deco-sites/brycamp/sections/Weather.tsx": $$$$$$53,
   },
   "matchers": {
     "deco-sites/brycamp/matchers/utm.ts": $$$$$$$0,
